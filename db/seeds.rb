@@ -2,10 +2,6 @@ puts "🌱 Seeding spices..."
 
 # Seed your database here
 
-
-
-
-
 world = Book.create(title:"World Travel: An Irreverent Guide", image:"https://images-na.ssl-images-amazon.com/images/I/51DZ9FcZqFS._SX329_BO1,204,203,200_.jpg", isbn:"0062802798",desc:"A guide to some of the world’s most fascinating places, as seen and experienced by writer, television host, and relentlessly curious traveler Anthony Bourdain",publisher:"Ecco")
 kitchen = Book.create(title:"Kitchen Confidential: Adventures in the Culinary Underbelly", image:"https://m.media-amazon.com/images/I/51yu7UKqHsL.jpg", isbn:"158234082X",desc:"Kitchen Confidential reveals what Bourdain calls 'twenty-five years of sex, drugs, bad behavior and haute cuisine.'",publisher:"Bloomsbury USA")
 sankofa = Book.create(title:"Sankofa: A Novel", image:"https://m.media-amazon.com/images/I/51yj2J1rqZL.jpg", isbn:"1646220838",desc:"A woman wondering who she really is goes in search of a father she never knew—only to find something far more complicated than she ever expected",publisher:"Catapult")
