@@ -12,9 +12,8 @@ class BookController < ApplicationController
 
     post '/books' do
         new_book = Book.create(params)
-        # new_book.authors.create(params[:author])
+        # Authorbook.create(author_id: params[:author], book_id: new_book.id)
         new_book.to_json
-
     end
 
 end 
