@@ -2,7 +2,12 @@ class BookController < ApplicationController
 
     get '/books' do
         book_list = Book.all 
-        book_list.to_json(only: [:title, :image], include: {authors: {only: [:name]}})
+        book_list.to_json(only: [:title, :image, :id], include: {authors: {only: [:name]}})
+    end
+
+    get '/books/:id' do
+        book = Book.find(params[:id])
+        book.to_json
     end
 
     post '/books' do
