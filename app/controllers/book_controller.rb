@@ -11,11 +11,12 @@ class BookController < ApplicationController
     end
 
     post '/books' do
-        new_book = Book.create(params)
-        #check if params[:author] exists in Author.all, if it does create
-        new_book.authors.create()
-        # Authorbook.create(author_id: params[:author], book_id: new_book.id)
+        new_book = Book.create(title: params[:title], image: params[:image], isbn: params[:isbn], desc: params[:desc], publisher: params[:publisher])
+
+        new_authorbook = params[:author].map {|author| Authorbook.create(author_id: author[:id], book_id: new_book.id)}
+
         new_book.to_json
+        new_authorbook.to_json
     end
 
 end 
