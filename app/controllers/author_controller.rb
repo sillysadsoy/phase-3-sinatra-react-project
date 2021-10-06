@@ -5,6 +5,11 @@ class AuthorController < ApplicationController
         authors_list.to_json
     end
 
+    get '/authors/:id' do
+        author = Author.find(params[:id])
+        author.to_json(include: :books)
+    end
+
     post '/authors' do
         new_author = Author.create(params)
         new_author.to_json

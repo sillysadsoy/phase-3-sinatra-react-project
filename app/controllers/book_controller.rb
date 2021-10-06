@@ -7,7 +7,7 @@ class BookController < ApplicationController
 
     get '/books/:id' do
         book = Book.find(params[:id])
-        book.to_json
+        book.to_json(include: :authors)
     end
 
     post '/books' do
