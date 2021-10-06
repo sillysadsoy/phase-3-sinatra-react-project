@@ -7,11 +7,13 @@ class BookController < ApplicationController
 
     get '/books/:id' do
         book = Book.find(params[:id])
-        book.to_json(include: :authors)
+        book.to_json(include: {authors: {only: [:name]}})
     end
 
     post '/books' do
         new_book = Book.create(params)
+        #check if params[:author] exists in Author.all, if it does create
+        new_book.authors.create()
         # Authorbook.create(author_id: params[:author], book_id: new_book.id)
         new_book.to_json
     end
