@@ -2,7 +2,7 @@ class AuthorController < ApplicationController
 
     get '/authors' do 
         authors_list = Author.all
-        authors_list.to_json
+        authors_list.to_json( include: {books: {only: [:title]}})
     end
 
     get '/authors/:id' do
